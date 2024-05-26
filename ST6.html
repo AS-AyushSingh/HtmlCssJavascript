@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+  body {
+  background-color: chocolate;
+  }
+  h1 {
+  font-family: cursive;
+  text-align: center;
+  font-size: 5cm;
+}
+ .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.image {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.image-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+    </style>
+    <title>Wallpapers Gallery</title>
+</head>
+<body>
+
+  <div class="heading">
+    <h1>Wallpapers Gallery</h1>
+  </div>
+    <div class="gallery">
+    <div class="gallery-item">
+      <img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg" 
+onclick="openImage('https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg')" alt="Image 1">
+    </div>
+    <div class="gallery-item">
+      <img 
+ src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA5L3Jhd3BpeGVsX29mZmljZV8zM193YWxscGFwZXJfcGF0dGVybl9vZl9wYXN0ZWxfY29sb3JlZF9wZW5jaWxfdF9kNzIzNTM5YS1iMDJiLTQ0ZmItYjA5Zi1mNzQwNjMxYjM1NTNfMS5qcGc.jpg" 
+onclick="openImage('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA5L3Jhd3BpeGVsX29mZmljZV8zM193YWxscGFwZXJfcGF0dGVybl9vZl9wYXN0ZWxfY29sb3JlZF9wZW5jaWxfdF9kNzIzNTM5YS1iMDJiLTQ0ZmItYjA5Zi1mNzQwNjMxYjM1NTNfMS5qcGc.jpg')" alt="Image 2">
+    </div>
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA1RaJjarGEbGqLm3scOI5Ohgi3FQKeiZGIChkhQsgIw&s" 
+onclick="openImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA1RaJjarGEbGqLm3scOI5Ohgi3FQKeiZGIChkhQsgIw&s')" alt="Image 2">
+    </div>
+    <div class="gallery-item">
+      <img src="https://wallpapers.com/images/featured/lockscreen-l331oqcvoqbusac7.jpg" 
+onclick="openImage('https://wallpapers.com/images/featured/lockscreen-l331oqcvoqbusac7.jpg')" alt="Image 3">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg" 
+           onclick="openImage('https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg')" alt="Image 4">
+    </div>
+    <div class="gallery-item">
+      <img 
+src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL3Jhd3BpeGVsX29mZmljZV8yNl9pbGx1c3RyYXRpb25fYXVyb3JhX2dyZWVuX3dpdGhfc3BhcmtsZV9sYW5kc181YjA0NzRiZi0zM2Q1LTQ5MWItODBlZi1kMWExMWFjOWVjYjFfMS5qcGc.jpg" 
+ onclick="openImage('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL3Jhd3BpeGVsX29mZmljZV8yNl9pbGx1c3RyYXRpb25fYXVyb3JhX2dyZWVuX3dpdGhfc3BhcmtsZV9sYW5kc181YjA0NzRiZi0zM2Q1LTQ5MWItODBlZi1kMWExMWFjOWVjYjFfMS5qcGc.jpg')" alt="Image 5">
+    </div>
+    <div class="gallery-item">
+      <img 
+src="https://i.pinimg.com/236x/29/87/d7/2987d729ee4168964075f1b4234f67f0.jpg" 
+onclick="openImage('https://i.pinimg.com/236x/29/87/d7/2987d729ee4168964075f1b4234f67f0.jpg')" alt="Image 6">
+    </div>
+    <div class="gallery-item">
+      <img src="https://t3.ftcdn.net/jpg/05/85/86/44/360_F_585864419_kgIYUcDQ0yiLOCo1aRjeu7kRxndcoitz.jpg" 
+      onclick="openImage('https://t3.ftcdn.net/jpg/05/85/86/44/360_F_585864419_kgIYUcDQ0yiLOCo1aRjeu7kRxndcoitz.jpg')" alt="Image 7">
+    </div>
+    <div class="gallery-item">
+      <img src="https://wallpapers-clan.com/wp-content/uploads/2023/07/aesthetic-fox-dark-wallpaper.jpg" 
+onclick="openImage('https://wallpapers-clan.com/wp-content/uploads/2023/07/aesthetic-fox-dark-wallpaper.jpg')" alt="Image 8">
+    </div>
+  </div>
+    <div id="myImage" class="image">
+    <span class="close" onclick="closeImage()">&times;</span>
+    <img class="image-content" id="Image">
+  </div>
+    <script type="text/javascript">
+        function openImage(imageSrc) {
+  var image = document.getElementById("myImage");
+  var Img = document.getElementById("Image");
+  image.style.display = "block";
+  Img.src = imageSrc;
+}
+
+function closeImage() {
+  var image = document.getElementById("myImage");
+  image.style.display = "none";
+}
+
+    </script>
+</body>
+</html>
